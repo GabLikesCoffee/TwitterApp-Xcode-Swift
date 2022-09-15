@@ -33,6 +33,10 @@
                                     <action selector="onLoginButton:" destination="xgj-Gr-to2" eventType="touchUpInside" id="zKb-NJ-OfT"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Twitter_Logo_Blue-2" translatesAutoresizingMaskIntoConstraints="NO" id="4YX-Xn-dG6">
+                                <rect key="frame" x="66" y="178" width="242" height="277"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ai4-OX-Sjv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="-2170.4000000000001" y="-2404.0479760119943"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="QpW-9q-hiA">
             <objects>
-                <tableViewController id="LWB-ZD-eDO" sceneMemberID="viewController">
+                <tableViewController id="LWB-ZD-eDO" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="vPr-eV-HpU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +78,14 @@
                             <outlet property="delegate" destination="LWB-ZD-eDO" id="ID2-Wt-5RA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="oJR-YW-7nH"/>
+                    <navigationItem key="navigationItem" title="Home" id="oJR-YW-7nH">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="lFS-Xg-wuE">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="LWB-ZD-eDO" id="C5x-AM-LU2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELq-Fm-Iqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,6 +98,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="frv-qo-jQd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="LWB-ZD-eDO" kind="relationship" relationship="rootViewController" id="dXH-Rr-pLD"/>
@@ -98,11 +113,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Twitter_Logo_Blue-2" width="400" height="400"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
