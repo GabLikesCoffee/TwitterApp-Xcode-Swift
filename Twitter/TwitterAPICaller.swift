@@ -6,6 +6,8 @@
 //  Copyright © 2019 Dan. All rights reserved.
 // Original consumer key: 5lUJuO5AUpPUCez4ewYDFrtgh
 // Original consumer secret: s5ynGqXzstUZwFPxVyMDkYh197qvHOcVM3kwv1o2TKhS1avCdS
+// My Consumer key: mKvKXDfSB6FE0ysO1CKXlcKI1
+// My consumer secret: ZSqKv72mrxpneTnmk4IRp74cOk9A005TIloH3rzKvVUdgb7pMk
 
 import UIKit
 import BDBOAuth1Manager
