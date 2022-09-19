@@ -8,12 +8,14 @@
 // Original consumer secret: s5ynGqXzstUZwFPxVyMDkYh197qvHOcVM3kwv1o2TKhS1avCdS
 // My Consumer key: mKvKXDfSB6FE0ysO1CKXlcKI1
 // My consumer secret: ZSqKv72mrxpneTnmk4IRp74cOk9A005TIloH3rzKvVUdgb7pMk
+// Helper key: 16Wvc714aoLCuO4Pv0hoPx3GA
+// Helper secret: hBYz6rEsOKRvxX2MgCuvQI4cZDRcBo6yZdOR3PHqMqkSVZCWiV
 
 import UIKit
 import BDBOAuth1Manager
 
 class TwitterAPICaller: BDBOAuth1SessionManager {    
-    static let client = TwitterAPICaller(baseURL: URL(string: "https://api.twitter.com"), consumerKey: "mKvKXDfSB6FE0ysO1CKXlcKI1", consumerSecret: "ZSqKv72mrxpneTnmk4IRp74cOk9A005TIloH3rzKvVUdgb7pMk")
+    static let client = TwitterAPICaller(baseURL: URL(string: "https://api.twitter.com"), consumerKey: "16Wvc714aoLCuO4Pv0hoPx3GA", consumerSecret: "hBYz6rEsOKRvxX2MgCuvQI4cZDRcBo6yZdOR3PHqMqkSVZCWiV")
     var loginSuccess: (() -> ())?
     var loginFailure: ((Error) -> ())?
     
