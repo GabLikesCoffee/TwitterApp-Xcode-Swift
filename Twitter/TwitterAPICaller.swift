@@ -10,12 +10,14 @@
 // My consumer secret: ZSqKv72mrxpneTnmk4IRp74cOk9A005TIloH3rzKvVUdgb7pMk
 // Helper key: 16Wvc714aoLCuO4Pv0hoPx3GA
 // Helper secret: hBYz6rEsOKRvxX2MgCuvQI4cZDRcBo6yZdOR3PHqMqkSVZCWiV
+// Actual Key: OIIG2GLumPDm4C7Y2A03bgfJa
+// Actual secret: sqZtp7VWWxghYyix2ChIMoYt29xwqcEbFUXFJwR4ShuxWDRh6p
 
 import UIKit
 import BDBOAuth1Manager
 
 class TwitterAPICaller: BDBOAuth1SessionManager {    
-    static let client = TwitterAPICaller(baseURL: URL(string: "https://api.twitter.com"), consumerKey: "16Wvc714aoLCuO4Pv0hoPx3GA", consumerSecret: "hBYz6rEsOKRvxX2MgCuvQI4cZDRcBo6yZdOR3PHqMqkSVZCWiV")
+    static let client = TwitterAPICaller(baseURL: URL(string: "https://api.twitter.com"), consumerKey: "OIIG2GLumPDm4C7Y2A03bgfJa", consumerSecret: "sqZtp7VWWxghYyix2ChIMoYt29xwqcEbFUXFJwR4ShuxWDRh6p")
     var loginSuccess: (() -> ())?
     var loginFailure: ((Error) -> ())?
     
@@ -67,6 +69,17 @@ class TwitterAPICaller: BDBOAuth1SessionManager {
         }, failure: { (task: URLSessionDataTask?, error: Error) in
             failure(error)
         })
+    }
+    
+    func postTweet(tweetString: String, success: @escaping () -> (), failure: @escaping (Error) -> ()){
+        
+        let url = "https://api.twitter.com/1.1/statuses/update.json"
+        TwitterAPICaller.client?.post(url, parameters: ["status":tweetString], progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
+            success()
+        }, failure: { (task: URLSessionDataTask?, error: Error) in
+            failure(error)
+        })
+        
     }
     
 }
