@@ -1,6 +1,6 @@
-# Project 3 - *Name of App Here*
+# Project 3 - *Codepath_Twitter*
 
-**Name of your app** is a basic twitter app to read your tweets.
+**Codepath_Twitter** is a basic twitter app to read your tweets.
 
 Time spent: **9** hours spent in total
 
